@@ -19,7 +19,7 @@ Basic CRUD ToDo app API with Node.js and Express
 Clone the project
 
 ```bash
-  git clone https://github.com/Nis13/FrogTsunami.git
+  git clone https://github.com/Nis13/To-Do-assignment.git
 ```
 
 Go to the project directory
