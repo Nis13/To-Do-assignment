@@ -9,25 +9,25 @@ const tasks = [
     },
     {
         id: 2,
-        title: "task 1 of user 1",
+        title: "task 1 of user 2",
         completed: false,
         userId:2
     },
     {
         id: 3,
-        title: "task 1 of user 1",
+        title: "task 2 of user 1",
         completed: false,
         userId:1
     },
     {
         id: 4,
-        title: "task 1 of user 1",
+        title: "task 2 of user 2",
         completed: false,
         userId:2
     },
     {
         id: 5,
-        title: "task 1 of user 1",
+        title: "task 3 of user 1",
         completed: false,
         userId:1
     }
@@ -42,10 +42,11 @@ export function getTaskById(id:number,userId:number){
     return tasksList.find(({id:taskId})=>taskId === id);
 };
 
-export function addTask(task:Task,userId:number){
+export function addTask(title:string, completed:boolean,userId:number){
     tasks.push(
         {
-            ...task,
+            title:title,
+            completed:completed,
             id: tasks[tasks.length-1].id +1,
             userId:userId
         }

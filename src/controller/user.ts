@@ -21,8 +21,6 @@ export async function createUser(req:Request, res:Response){
     
     const data = await UserService.createUser(body);
     const { password, ...publicUser } = data;
-    res.json({
-        publicUser
-    })
+    res.json(publicUser)
   
 }

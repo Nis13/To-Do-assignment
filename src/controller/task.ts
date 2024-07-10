@@ -16,12 +16,14 @@ export function getTaskById(req:any, res:Response){
 
 export function createTask(req:any, res:Response){
     const userId = req.user.id;
-    const { body } = req;
-    console.log(body);
-    
-    const data = TaskService.addTask(body,userId);
+    const task = req.body;
+    if (!task || !task.title) {
+        res.json({error:"task's title is required"});
+    }
+    const data = TaskService.addTask(task.title,task.completed,userId);
     res.json(data)
 }
+
 export function updateTask(req:any, res:Response){
     const userId = req.user.id;
     const id = req.params.id;

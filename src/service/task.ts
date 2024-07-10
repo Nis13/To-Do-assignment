@@ -21,8 +21,8 @@ export function getTaskById(id:number,userId:number){
     return data;
 };
 
-export function addTask(task:Task,userId:number){
-    const data = TaskModel.addTask(task,userId);
+export function addTask(title:string, completed:boolean,userId:number){
+    const data = TaskModel.addTask(title,completed,userId);
     return data;
 }
 

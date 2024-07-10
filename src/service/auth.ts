@@ -65,5 +65,5 @@ export async function refresh(body: { refreshToken: string }) {
     const accessToken = sign(payload, config.jwt.secret!, {
       expiresIn: config.jwt.accessTokenExpiryMS,
     });
-    return accessToken ;
+    return {accessToken:accessToken} ;
   }
